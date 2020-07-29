@@ -1,0 +1,143 @@
+@import '~antd/lib/style/themes/default.less';
+@import '../../../../themes/less/theme_color.less';
+
+.common-node{
+    padding: 10px 30px;
+    min-height: 30px;
+    border-radius: 5px;
+    word-break: break-all;
+    background-color: @layout-body-background;
+    border: 2px solid @recipe-studio-step-border;
+    position: relative;
+    &.is_selected{
+        border: 2px solid @primary-color;
+    }
+    .title{
+        font-size: 0.875rem;
+    }
+    .port-top{
+        position: absolute;
+        width: 12px;
+        height: 8px;
+        top: -8px;
+        left: calc(50% - 6px);
+        border-top-left-radius: 5px;
+        overflow: hidden;
+        border-top-right-radius: 5px;
+        background: @recipe-studio-step-border
+    }
+    .port-bottom{
+        position: absolute;
+        width: 12px;
+        height: 8px;
+        bottom: -8px;
+        left: calc(50% - 6px);
+        border-bottom-left-radius: 5px;
+        overflow: hidden;
+        border-bottom-right-radius: 5px;
+        background: @recipe-studio-step-border
+    }
+    .port-node{
+        width: 100%;
+        height: 100%;
+        // background: @recipe-studio-step-border;
+        // opacity: 0.3;
+        &:hover{
+            opacity: 0.8;
+            background: @recipe-studio-step-border !important;
+        }
+    }
+    &.is_start{
+        border-radius: 30px;
+    }
+    &.is_end{
+        border-radius: 30px;
+    }
+    &.is_start{
+        .port-top{
+            display: none;
+        }
+    }
+    &.is_end{
+        .port-bottom{
+            display: none;
+        }
+    }
+}
+.transaction-node{
+    width: 40px;
+    height: 40px;
+    .cross{
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: transparent;
+        position: relative;
+        &:after{
+            content: '';
+            position: absolute;
+            top: 35%;
+            width: 30%;
+            height: 30%;
+            left: 35%;
+            background-color: @layout-body-background;
+        }
+        .top-center, .bottom-center, .left-center, .right-center{
+            background-color: @layout-body-background;
+            position: absolute;
+            border: 2px solid @recipe-studio-step-border;
+        }
+        .top-center{
+            width: 30%;
+            height: 35%;
+            top: 0px;
+            left: 35%;
+            border-bottom: none;
+        }
+        .bottom-center{
+            width: 30%;
+            height: 35%;
+            bottom: 0px;
+            right: 35%;
+            border-top: none;
+        }
+        .left-center{
+            width: 35%;
+            height: 30%;
+            top: 35%;
+            left: 0;
+            border-right: none;
+        }
+        .right-center{
+            width: 35%;
+            height: 30%;
+            top: 35%;
+            right: 0;
+            border-left: none;
+        }
+    }
+    .port-top{
+        position: absolute;
+        width: 30%;
+        height: 8px;
+        top: 0px;
+        left: 35%;
+        overflow: hidden;
+    }
+    .port-bottom{
+        position: absolute;
+        width: 30%;
+        height: 8px;
+        bottom: 0px;
+        left: 35%;
+        overflow: hidden;
+    }
+    .port-node{
+        width: 100%;
+        height: 100%;
+        &:hover{
+            opacity: 0.8;
+            background: @recipe-studio-step-border !important;
+        }
+    }
+}
